@@ -1,5 +1,7 @@
 @import "./variables";
+@import "./mixins";
 @import "./colors";
 @import "./general";
 
 @import "../../containers/layouts/Header/header.scss";
+@import "../../containers/About/about.scss";

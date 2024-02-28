@@ -1,5 +1,7 @@
+import About from '../../containers/About'
+
 function Home() {
-  return <div></div>
+  return <About />
 }
 
 export default Home

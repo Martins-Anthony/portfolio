@@ -1,0 +1,21 @@
+.about-container {
+  padding: 6.25rem 0;
+  @include center;
+  flex-direction: column;
+  text-align: center;
+  h1 {
+    font-family: $font-family-title;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  p {
+    font-family: $font-family-text;
+    font-size: 1.56rem;
+    text-align: justify;
+    color: $gray;
+  }
+}
+
+.about {
+  max-width: 16.44rem;
+}
