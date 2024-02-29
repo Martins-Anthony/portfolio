@@ -1,0 +1,14 @@
+.tags-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.62rem;
+}
+
+.tags-style {
+  border: 0.12rem solid $gray;
+  border-radius: 0.94rem;
+  padding: 0.31rem 0.94rem;
+  font-size: 0.75rem;
+  color: $black;
+}
