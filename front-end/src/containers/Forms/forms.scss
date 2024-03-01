@@ -1,0 +1,19 @@
+.form-container {
+  background: $lenear-blue;
+  padding: 1.37rem;
+  border-radius: 1.25rem;
+  @include center;
+  flex-direction: column;
+  gap: 0.62rem;
+}
+
+.submit-style {
+  background: $lenear-submit;
+  padding: 0.62rem 2.5rem;
+  border-radius: 0.94rem;
+  border: none;
+  font-family: $font-family-title;
+  font-size: 0.87rem;
+  margin-top: 1.56rem;
+  margin-bottom: 1.56rem;
+}

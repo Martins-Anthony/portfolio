@@ -7,7 +7,12 @@
 @import "../../containers/layouts/Header/header.scss";
 @import "../../containers/layouts/Footer/footer.scss";
 
+/* Components */
+@import "../../components/Cards/cards.scss";
+@import "../../components/Field/field.scss";
+@import "../../components/Contact/contact.scss";
+
 /* Containers */
 @import "../../containers/About/about.scss";
 @import "../../containers/Projects/projects.scss";
-@import "../../components/Cards/cards.scss";
+@import "../../containers/Forms/forms.scss";

@@ -1,0 +1,25 @@
+.inputField {
+  background: $background;
+  border-radius: 0.94rem;
+  border: 1px solid $gray;
+  padding: 0.62rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  span {
+    color: $gray;
+  }
+  input,
+  textarea {
+    background: border-box;
+    border: none;
+    padding: 0.62rem 0.75rem;
+    font-size: 0.875rem;
+    color: $gray;
+    min-width: 12.25rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}
