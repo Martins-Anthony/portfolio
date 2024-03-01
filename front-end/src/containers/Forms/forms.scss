@@ -5,6 +5,12 @@
   @include center;
   flex-direction: column;
   gap: 0.62rem;
+  legend {
+    font-family: $font-family-title;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0 0 0.62rem 0;
+  }
 }
 
 .submit-style {

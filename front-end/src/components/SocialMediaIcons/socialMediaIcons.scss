@@ -1,0 +1,7 @@
+.icons-container {
+  @include center;
+  gap: 1.25rem;
+  a {
+    height: 1.7rem;
+  }
+}

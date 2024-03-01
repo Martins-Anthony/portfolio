@@ -3,6 +3,7 @@ import Field, { FIELD_TYPES } from '../../components/Field'
 function Form() {
   return (
     <form onSubmit={''} className="form-container">
+      <legend>Send me a message</legend>
       <Field
         type={FIELD_TYPES.INPUT_TEXT}
         label="Name :"
