@@ -3,7 +3,7 @@ import SocialMediaIcons from '../SocialMediaIcons'
 
 function Contact() {
   return (
-    <section className="contact-container">
+    <section className="contact-container" id="contact">
       <Form />
       <SocialMediaIcons />
     </section>

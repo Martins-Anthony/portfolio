@@ -1,17 +1,12 @@
-import PropTypes from 'prop-types'
-import menuBurger from '../../../assets/icons/icon_menu_burger.svg'
-
-function Header({ title }) {
+import Navbar from '../../Navbar'
+import Logo from '../../../components/Logo'
+function Header() {
   return (
     <header className="header-container">
-      <div className="header-style">{title}</div>
-      <img src={menuBurger} alt="Menu"></img>
+      <Logo name="header" />
+      <Navbar />
     </header>
   )
-}
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired
 }
 
 export default Header

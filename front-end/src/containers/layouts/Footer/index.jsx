@@ -1,18 +1,18 @@
-import PropTypes from 'prop-types'
+import React from 'react'
+import Logo from '../../../components/Logo'
 
-function Footer({ title }) {
+function Footer() {
   const date = new Date()
   return (
     <footer className="footer-container">
-      <p>
-        © {date.getFullYear()} {title}. All rights reserved
-      </p>
+      <Logo name="footer" />
+      <div className="copyright">
+        <span>© {date.getFullYear()}</span>
+        <Logo />
+        <p> All rights reserved</p>
+      </div>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  title: PropTypes.string.isRequired
 }
 
 export default Footer
