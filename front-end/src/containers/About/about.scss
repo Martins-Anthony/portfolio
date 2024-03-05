@@ -19,3 +19,18 @@
 .about {
   max-width: 16.44rem;
 }
+
+@include tablet {
+  .about-container{
+    h1 {
+      font-size: 4.1rem;
+    }
+    p {
+      font-size: 1.56rem;
+      padding: 0 8rem;
+    }
+    .about {
+      max-width: 100%;
+    }
+  }
+}
