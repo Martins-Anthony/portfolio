@@ -20,6 +20,9 @@
 }
 
 @include tablet {
+  .projects-container {
+    padding-bottom: 3.12rem;
+  }
   .projects-container-style {
     max-width: 36rem;
     box-shadow: $projects-shadow;

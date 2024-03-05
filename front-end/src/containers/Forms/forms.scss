@@ -5,6 +5,7 @@
   @include center;
   flex-direction: column;
   gap: 0.62rem;
+  box-sizing: border-box;
   legend {
     font-family: $font-family-title;
     font-size: 1.25rem;
@@ -22,4 +23,18 @@
   font-size: 0.87rem;
   margin-top: 1.56rem;
   margin-bottom: 1.56rem;
+}
+
+@include tablet {
+  .form-container {
+    max-width: 36rem;
+    width: 100%;
+    padding-left: 3.44rem;
+    padding-right: 3.44rem;
+    align-items: flex-start;
+    .submit-style {
+      align-self: center;
+    }
+  }
+  
 }
