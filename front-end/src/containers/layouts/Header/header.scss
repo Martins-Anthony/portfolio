@@ -11,3 +11,9 @@
   font-family: $font-family-title;
   font-size: 0.94rem;
 }
+
+@include tablet {
+  .header-container {
+    flex-direction: column;
+  }
+}

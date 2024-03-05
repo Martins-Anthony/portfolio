@@ -1,4 +1,4 @@
-.navbar-mobile-container {
+.navbar-container {
   list-style: none;
   @include center;
   a {
@@ -7,12 +7,46 @@
     font-family: $font-family-title;
     font-size: 2rem;
     font-weight: 700;
-    padding: 0.62rem 0.94rem;
-    display: flex;
-    align-items: center;
     gap: 0.62rem;
     &:hover {
       background: $gray;
     }
   }
 }
+.navbar {
+  display: none;
+}
+
+@include tablet {
+  .menu-burger {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    border-radius: 1.56rem;
+    padding: 0.5rem 0.56rem;
+    background: $cards-filter;
+    border: 1px solid $white;
+    box-shadow: 0px 0px 20px 0px #f5f5f5;
+    flex-wrap: wrap;
+    margin-top: 4.37rem;
+    justify-content: center;
+  }
+  
+  .btn {
+    border-radius: 1.25rem;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    a {
+      font-size: 1rem;
+      border-radius: 1.25rem;
+    }
+  }
+  .active {
+    background: $logo-color;
+    border: 2px solid rgba(15, 92, 240, 0.69);
+  }
+}
+

@@ -10,9 +10,9 @@ function Navbar() {
     { name: 'Contact', link: '#contact' }
   ]
 
-  const itemsModal = links.map((link, index) => {
+  const itemsNavbar = links.map((link, index) => {
     return (
-      <li key={index} className="navbar-mobile-container">
+      <li key={index} className="navbar-container btn">
         <a href={link.link}>{link.name}</a>
       </li>
     )
@@ -31,8 +31,12 @@ function Navbar() {
 
   return (
     <>
-      {!isOpen && <img src={menuBurger} alt={'Menu'} onClick={openModal} />}
-      <Modal children={itemsModal} isOpen={isOpen} onClose={closeModal}></Modal>
+      {!isOpen && <img src={menuBurger} alt={'Menu'} onClick={openModal} className="menu-burger" />}
+      <Modal
+        children={<ul className="modal-content">{itemsNavbar}</ul>}
+        isOpen={isOpen}
+        onClose={closeModal}></Modal>
+      <ul className="navbar">{itemsNavbar}</ul>
     </>
   )
 }
