@@ -7,17 +7,17 @@
 body {
   margin: 2rem 0 0 0;
   background: $background;
-  margin: 0;
 }
 
-#root {
-  width: 100%;
-  @include center;
+#root {  
+  display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 @include desktop {
   .main-container {
     max-width: 1440px;
+    width: 100%;
   }
 }

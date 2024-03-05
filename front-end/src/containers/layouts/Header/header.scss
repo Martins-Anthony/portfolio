@@ -17,3 +17,11 @@
     flex-direction: column;
   }
 }
+
+@include desktop {
+  .header-container {
+    flex-direction: row; 
+    padding-left: 7.81rem;
+    padding-right: 7.81rem;
+  }
+}

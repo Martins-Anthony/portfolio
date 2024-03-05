@@ -7,30 +7,36 @@
     font-family: $font-family-title;
     font-size: 2.5rem;
     font-weight: 700;
+    max-width: 16.44rem;
   }
   p {
     font-family: $font-family-text;
     font-size: 1.56rem;
     text-align: justify;
     color: $gray;
+    max-width: 16.44rem;
   }
-}
-
-.about {
-  max-width: 16.44rem;
 }
 
 @include tablet {
   .about-container{
     h1 {
       font-size: 4.1rem;
+      max-width: 31.75rem;
     }
     p {
       font-size: 1.56rem;
-      padding: 0 8rem;
+      margin-left: 1.75rem;
+      margin-right: 1.75rem;
+      max-width: 31.75rem;
     }
-    .about {
-      max-width: 100%;
+  }
+}
+
+@include desktop {
+  .about-container {
+    h1 {
+      max-width: 61.25rem;
     }
   }
 }

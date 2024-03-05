@@ -50,3 +50,8 @@
   }
 }
 
+@include desktop {
+  .navbar {
+    margin-top: 0;
+  }
+}
