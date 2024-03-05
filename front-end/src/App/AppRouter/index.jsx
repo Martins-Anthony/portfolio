@@ -8,10 +8,12 @@ import { logo } from '../../../src/data/logo.js'
 function AppRouter() {
   return (
     <Router>
-      <Header title={logo} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <div className="main-container">
+        <Header title={logo} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
       <Footer title={logo} />
     </Router>
   )
