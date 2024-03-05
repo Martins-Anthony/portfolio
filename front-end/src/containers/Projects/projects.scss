@@ -1,11 +1,11 @@
 .projects-container {
-  display: flex;
+  @include center;
   margin: 0;
 }
 
 .projects-container-style {
   background: $lenear-blue;
-  border-radius: 1.87rem 1.87rem 0 0;
+  border-radius: 1.87rem 1.87rem;
   padding: 3.12rem 1.87rem;
   width: 100%;
   display: flex;
@@ -16,5 +16,12 @@
     font-size: 2.12rem;
     font-weight: 700;
     margin: 0;
+  }
+}
+
+@include tablet {
+  .projects-container-style {
+    max-width: 36rem;
+    box-shadow: $projects-shadow;
   }
 }
