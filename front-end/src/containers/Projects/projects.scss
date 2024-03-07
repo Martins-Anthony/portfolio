@@ -6,7 +6,7 @@
 .projects-container-style {
   background: $lenear-blue;
   border-radius: 1.87rem 1.87rem;
-  padding: 3.12rem 1.87rem;
+  padding: 3.12rem 0.5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -28,5 +28,23 @@
     box-shadow: $projects-shadow;
     padding-top: 1.87rem;
     padding-bottom: 2.81rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
+}
+
+@include desktop {
+  .projects-container {
+    margin-left: 4.12rem;
+    margin-right: 4.12rem;
+  }
+  .projects-container-style {
+    max-width: 73.75rem;
+    column-gap: 3.12rem;
+    padding-bottom: 4.12rem;
+    h2 {
+      width: 100%;
+    }
+  }
+  
 }
