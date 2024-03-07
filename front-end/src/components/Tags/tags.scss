@@ -12,3 +12,9 @@
   font-size: 0.75rem;
   color: $black;
 }
+
+@include desktop {
+  .tags-style {
+    font-size: 1rem;
+  }
+}

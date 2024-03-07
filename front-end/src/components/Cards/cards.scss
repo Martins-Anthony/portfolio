@@ -18,7 +18,7 @@
     width: 100%;
     position: absolute;
   }
-
+  
   img {
     object-fit: cover;
     z-index: 1;
@@ -41,5 +41,20 @@
     font-family: $font-family-title;
     font-weight: 700;
     font-size: 1rem;
+  }
+}
+
+@include desktop {
+  .card-container-img {
+    height: 17.12rem;
+    img,
+    .background-filter {
+      height: 17.12rem;
+    }
+  }
+  .card-title {
+    h3 {
+      font-size: 1.62rem;
+    }
   }
 }
