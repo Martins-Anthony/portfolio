@@ -25,11 +25,13 @@
       outline: none;
     }
   }
+  .textarea-style {
+    height: 10.87rem;
+  }
 }
 
 @include tablet {
   .inputField {
-    
     width: 100%;
   }
 }

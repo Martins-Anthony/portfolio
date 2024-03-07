@@ -2,15 +2,24 @@
   background: $lenear-blue;
   padding: 1.37rem;
   border-radius: 1.25rem;
-  @include center;
+  display: flex;
   flex-direction: column;
-  gap: 0.62rem;
+  gap: 0.87rem;
   box-sizing: border-box;
+  width: 100%;
   legend {
     font-family: $font-family-title;
     font-size: 1.25rem;
     font-weight: 400;
     margin: 0 0 0.62rem 0;
+  }
+  .form-container_text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.87rem;
+  }
+  .submit-style {
+    align-self: center;
   }
 }
 
@@ -28,13 +37,22 @@
 @include tablet {
   .form-container {
     max-width: 36rem;
-    width: 100%;
     padding-left: 3.44rem;
     padding-right: 3.44rem;
-    align-items: flex-start;
-    .submit-style {
-      align-self: center;
+    align-items: stretch;
+  }
+}
+
+@include desktop {
+  .form-container {
+    max-width: 74rem;
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
+    gap: 2rem;
+    .form-container_text {
+      flex-direction: row;
+      justify-content: space-evenly;
+      gap: 2rem;
     }
   }
-  
 }

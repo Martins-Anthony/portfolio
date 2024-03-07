@@ -12,7 +12,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
       component = <input type="text" name={name} placeholder={placeholder} required />
       break
     case FIELD_TYPES.TEXTAREA:
-      component = <textarea name={name} required />
+      component = <textarea name={name} required className="textarea-style" />
       break
     default:
       component = <input type="text" name={name} placeholder={placeholder} required />

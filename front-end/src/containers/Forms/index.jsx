@@ -4,18 +4,20 @@ function Form() {
   return (
     <form onSubmit={''} className="form-container">
       <legend>Send me a message</legend>
-      <Field
-        type={FIELD_TYPES.INPUT_TEXT}
-        label="Name :"
-        name="name"
-        placeholder="Enter your name"
-      />
-      <Field
-        type={FIELD_TYPES.INPUT_TEXT}
-        label="Email :"
-        name="email"
-        placeholder="Enter your email"
-      />
+      <div className="form-container_text">
+        <Field
+          type={FIELD_TYPES.INPUT_TEXT}
+          label="Name :"
+          name="name"
+          placeholder="Enter your name"
+        />
+        <Field
+          type={FIELD_TYPES.INPUT_TEXT}
+          label="Email :"
+          name="email"
+          placeholder="Enter your email"
+        />
+      </div>
       <Field
         type={FIELD_TYPES.TEXTAREA}
         label="Message :"
