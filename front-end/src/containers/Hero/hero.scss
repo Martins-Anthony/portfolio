@@ -1,0 +1,41 @@
+.hero-container {
+  padding: 6.25rem 0;
+  @include center;
+  flex-direction: column;
+  text-align: center;
+  h1 {
+    max-width: 16.44rem;
+  }
+  h1, span {
+    font-family: $font-family-title;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  span {
+    margin: 0;
+    color: $logo-blue;
+  }
+}
+
+@include tablet {
+  .hero-container{
+    h1, span {
+      font-size: 3.75rem;
+      
+    }
+    h1 {
+      max-width: 31.75rem;
+    }
+  }
+}
+
+@include desktop {
+  .hero-container {
+    h1 {
+      max-width: 61.25rem;
+    }
+    h1, span {
+      font-size: 4.37rem;
+    }
+  }
+}

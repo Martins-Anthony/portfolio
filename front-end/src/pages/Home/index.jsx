@@ -1,11 +1,11 @@
-import About from '../../containers/About'
+import Hero from '../../containers/Hero'
 import Projects from '../../containers/Projects'
 import Contact from '../../components/Contact'
 
 function Home() {
   return (
     <>
-      <About />
+      <Hero />
       <Projects title={'Projects'} />
       <Contact />
     </>
