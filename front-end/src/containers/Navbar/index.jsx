@@ -12,12 +12,21 @@ function Navbar() {
     { name: 'Contact', link: '/contact' }
   ]
 
+  const handlerClick = (sectionId) => {
+    if (isOpen === true) {
+      closeModal()
+    }
+    scrollToSection(sectionId)
+  }
+
   const itemsNavbar = links.map((link, index) => {
     return (
       <li key={index} className="navbar-container">
         <NavLink
           to={link.link}
-          onClick={() => scrollToSection(link.name.toLowerCase())}
+          onClick={() => {
+            handlerClick(link.name.toLowerCase())
+          }}
           className={'btn'}>
           {link.name}
         </NavLink>
