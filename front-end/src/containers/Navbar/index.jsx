@@ -5,8 +5,6 @@ import { NavLink } from 'react-router-dom'
 import React from 'react'
 import { scrollToSection } from '../../utils/scrollToSection'
 function Navbar() {
-  const [activeLink, setActiveLink] = useState(null)
-
   const links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -14,18 +12,12 @@ function Navbar() {
     { name: 'Contact', link: '/contact' }
   ]
 
-  const handleNavLinkClick = (sectionId) => {
-    scrollToSection(sectionId)
-    setActiveLink(sectionId)
-    console.log(activeLink)
-  }
-
   const itemsNavbar = links.map((link, index) => {
     return (
       <li key={index} className="navbar-container">
         <NavLink
           to={link.link}
-          onClick={() => handleNavLinkClick(link.name.toLowerCase())}
+          onClick={() => scrollToSection(link.name.toLowerCase())}
           className={'btn'}>
           {link.name}
         </NavLink>

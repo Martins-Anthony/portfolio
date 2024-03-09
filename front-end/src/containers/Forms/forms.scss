@@ -18,20 +18,6 @@
     flex-direction: column;
     gap: 0.87rem;
   }
-  .submit-style {
-    align-self: center;
-  }
-}
-
-.submit-style {
-  background: $lenear-submit;
-  padding: 0.62rem 2.5rem;
-  border-radius: 0.94rem;
-  border: none;
-  font-family: $font-family-title;
-  font-size: 0.87rem;
-  margin-top: 1.56rem;
-  margin-bottom: 1.56rem;
 }
 
 @include tablet {

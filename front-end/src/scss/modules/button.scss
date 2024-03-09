@@ -1,0 +1,45 @@
+.btn {
+  text-decoration: none;
+  color: $white;
+  font-family: $font-family-title;
+  font-size: 2rem;
+  font-weight: 700;
+  gap: 0.62rem;
+  border-radius: 1.25rem;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  border: 0.12rem solid transparent;
+}
+.active {
+  background: $lenear-submit;
+  border: 0.12rem solid $bouton-color;
+  box-shadow: $bouton-shadow;
+}
+
+.btn:hover {
+  background: $logo-color;
+  border: 0.12rem solid $bouton-color;
+}
+.active:hover {
+  background: $lenear-submit;
+  cursor: default;
+}
+
+.submit-style {
+  align-self: center;
+  background: $lenear-submit;
+  border: 0.12rem solid $bouton-color;
+  box-shadow: $bouton-shadow;
+  margin-top: 1.56rem;
+  margin-bottom: 1.56rem;
+}
+.submit-style:hover {
+  cursor: pointer;
+}
+
+@include tablet {
+  .btn {
+    font-size: 0.87rem;
+  }
+}

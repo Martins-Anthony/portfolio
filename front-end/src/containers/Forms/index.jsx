@@ -24,7 +24,7 @@ function Form() {
         name="message"
         placeholder="Enter your message"
       />
-      <button type="submit" className="submit-style">
+      <button type="submit" className="submit-style btn">
         Submit
       </button>
     </form>
