@@ -5,7 +5,7 @@ import Paging from '../../components/Paging'
 
 function Projects({ title }) {
   return (
-    <section className="projects-container">
+    <section className="projects-container" id="projects">
       <div className="projects-container-style">
         <h2>{title}</h2>
         <Paging data={data} />

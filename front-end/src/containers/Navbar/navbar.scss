@@ -1,16 +1,16 @@
 .navbar-container {
   list-style: none;
-  @include center;
-  a {
-    text-decoration: none;
-    color: $white;
-    font-family: $font-family-title;
-    font-size: 2rem;
-    font-weight: 700;
-    gap: 0.62rem;
-    &:hover {
-      background: $gray;
-    }
+  @include center; 
+}
+.btn {
+  text-decoration: none;
+  color: $white;
+  font-family: $font-family-title;
+  font-size: 2rem;
+  font-weight: 700;
+  gap: 0.62rem;
+  &:hover {
+    background: $gray;
   }
 }
 .navbar {
@@ -29,24 +29,37 @@
     padding: 0.5rem 0.56rem;
     background: $cards-filter;
     border: 1px solid $white;
-    box-shadow: $navbar-shadow;
+    transition: opacity 0.5s ease-in-out;
     flex-wrap: wrap;
     margin-top: 4.37rem;
     justify-content: center;
   }
-  
+
   .btn {
     border-radius: 1.25rem;
     white-space: nowrap;
     padding: 0.5rem 1rem;
-    a {
-      font-size: 1rem;
-      border-radius: 1.25rem;
-    }
+    font-size: 0.87rem;
+    border-radius: 1.25rem;
+    border: 0.12rem solid transparent;
   }
   .active {
+    background: $lenear-submit;
+    border: 0.12rem solid rgba(15, 92, 240, 0.69);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn:hover {
     background: $logo-color;
-    border: 2px solid rgba(15, 92, 240, 0.69);
+    border: 0.12rem solid rgba(15, 92, 240, 0.69);
+  }
+  .active:hover {
+    background: $lenear-submit;
+    cursor:default;
+  }
+  .navbar:hover {
+    box-shadow: $navbar-shadow;
+    opacity: 0.8;
   }
 }
 
