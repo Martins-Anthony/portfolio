@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,
-  TEXTAREA: 2
+  TEXTAREA: 2,
+  INPUT_PASSWORD: 3
 }
 
 const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
@@ -13,6 +14,9 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
       break
     case FIELD_TYPES.TEXTAREA:
       component = <textarea name={name} required className="textarea-style" />
+      break
+    case FIELD_TYPES.INPUT_PASSWORD:
+      component = <input type="password" name={name} placeholder={placeholder} required />
       break
     default:
       component = <input type="text" name={name} placeholder={placeholder} required />
