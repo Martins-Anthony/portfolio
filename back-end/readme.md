@@ -23,8 +23,16 @@ license: (ISC)
 
 pour simplifier le développement Node
 
-# `npm install -g nodemon`
+`npm install -g nodemon`
 
 # installation de Express
 
-# `npm install express --save`
+`npm install express --save`
+
+# installation de mongoose
+
+`npm install mongoose`
+
+# installation de mongodb
+
+`npm install mongodb`
