@@ -1,10 +1,8 @@
 const express = require('express')
+const adminCtrl = require('../controllers/admin')
 const router = express.Router()
 
-const projectCtrl = require('../controllers/project')
-
-router.post('/', projectCtrl.createProject)
-router.put('/:id', projectCtrl.modifyProject)
-router.delete('/:id', projectCtrl.deleteProject)
+router.post('/signup', adminCtrl.signup)
+router.post('/login', adminCtrl.login)
 
 module.exports = router

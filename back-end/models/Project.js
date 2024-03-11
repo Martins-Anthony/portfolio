@@ -9,7 +9,7 @@ const projectSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  images: {
+  imagesUrl: {
     type: Array,
     required: true
   },

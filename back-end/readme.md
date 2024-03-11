@@ -20,9 +20,7 @@ author:
 license: (ISC)
 
 # installation de nodemon
-
 pour simplifier le développement Node
-
 `npm install -g nodemon`
 
 # installation de Express
@@ -36,3 +34,19 @@ pour simplifier le développement Node
 # installation de mongodb
 
 `npm install mongodb`
+
+# installation de mongoose-unique-validator
+
+`npm install --save mongoose-unique-validator`
+
+# installation de bcrypt
+pour crypter le mot de passe
+`npm install bcrypt`
+
+# installation de jsonwebtoken
+pour créer et vérifier les tokens authentication
+`npm install jsonwebtoken`
+
+# installation de multer
+pour télécharger des images
+`npm install multer`
