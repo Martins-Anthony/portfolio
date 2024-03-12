@@ -2,13 +2,13 @@ const Project = require('../models/Project')
 const fs = require('fs')
 
 exports.createProject = (req, res, next) => {
-  const projectObject = JSON.parse(req.body.project)
+  const projectObject = req.body
   delete projectObject._id
   delete projectObject._userId
   const project = new Project({
     ...projectObject,
     userId: req.auth.userId,
-    imagesUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
   })
   project
     .save()
@@ -22,7 +22,7 @@ exports.modifyProject = (req, res, next) => {
   const projectObject = req.file
     ? {
         ...JSON.parse(req.body.project),
-        imagesUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+        image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
       }
     : { ...req.body }
   delete projectObject._id

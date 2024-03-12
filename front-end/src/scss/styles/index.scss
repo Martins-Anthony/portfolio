@@ -7,10 +7,14 @@
 @import "../../containers/layouts/Header/header.scss";
 @import "../../containers/layouts/Footer/footer.scss";
 
+/* modules */
+@import "../modules/button.scss";
+@import "../modules/form.scss";
+@import "../modules/section.scss";
+
 /* Components */
 @import "../../components/Cards/cards.scss";
 @import "../../components/Field/field.scss";
-@import "../../components/Contact/contact.scss";
 @import "../../components/SocialMediaIcons/socialMediaIcons.scss";
 @import "../../components/Logo/logo.scss";
 @import "../../components/Paging/paging.scss";
@@ -18,11 +22,9 @@
 /* Containers */
 @import "../../containers/Hero/hero.scss";
 @import "../../containers/Projects/projects.scss";
-@import "../../containers/Forms/forms.scss";
+@import "../../containers/Forms/Contact/contact.scss";
+@import "../../containers/Forms/Add/add.scss";
 @import "../../containers/Modal/modal.scss";
-
-/* modules */
-@import "../modules/button.scss";
 
 /* Pages */
 @import "../../pages/Error/error.scss";

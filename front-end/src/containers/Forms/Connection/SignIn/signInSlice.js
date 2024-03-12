@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { urlApi } from '../../utils/api/address'
+import { urlApi } from '../../../../utils/api/address'
 
 export const signIn = createAsyncThunk('signIn', async (id, thunkAPI) => {
   try {
@@ -11,10 +11,11 @@ export const signIn = createAsyncThunk('signIn', async (id, thunkAPI) => {
       body: JSON.stringify(id)
     })
     const data = await response.json()
+
     if (data.error) {
       throw new Error(data.error)
     } else {
-      return data
+      return data.token
     }
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message)

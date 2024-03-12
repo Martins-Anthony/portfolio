@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.btn-marge {
+  margin: 0;
+}
+
 @include tablet {
   .btn {
     font-size: 0.87rem;

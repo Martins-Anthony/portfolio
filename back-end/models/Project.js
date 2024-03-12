@@ -9,9 +9,9 @@ const projectSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  imagesUrl: {
-    type: Array,
-    required: true
+  image: {
+    type: String,
+    required: false
   },
   linkGithub: {
     type: String,
@@ -22,7 +22,7 @@ const projectSchema = mongoose.Schema({
     required: true
   },
   tags: {
-    type: Array,
+    type: String,
     required: true
   },
   date: {
@@ -31,8 +31,9 @@ const projectSchema = mongoose.Schema({
   },
   userId: {
     type: String,
-    required: true
+    required: false
   }
 })
 
 module.exports = mongoose.model('Project', projectSchema)
+

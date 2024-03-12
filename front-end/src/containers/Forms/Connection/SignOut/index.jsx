@@ -5,10 +5,9 @@ function SignOut() {
   const handleClick = () => {
     dispatch(signOut())
     sessionStorage.clear()
-    console.log('test click', sessionStorage)
   }
   return (
-    <button onClick={handleClick} className="submit-style btn">
+    <button onClick={handleClick} className="submit-style btn btn-marge">
       Sign Out
     </button>
   )

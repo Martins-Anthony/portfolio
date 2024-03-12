@@ -1,6 +1,6 @@
 import Hero from '../../containers/Hero'
 import Projects from '../../containers/Projects'
-import Contact from '../../components/Contact'
+import Contact from '../../containers/Forms/Contact'
 
 function Home() {
   return (

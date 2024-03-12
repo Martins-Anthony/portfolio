@@ -4,7 +4,11 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import React from 'react'
 import { scrollToSection } from '../../utils/scrollToSection'
+import { selectIsSignedIn } from '../../App/store/selectors'
+import { useSelector } from 'react-redux'
+import SignOut from '../Forms/Connection/SignOut'
 function Navbar() {
+  const signOut = useSelector(selectIsSignedIn)
   const links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
@@ -52,7 +56,10 @@ function Navbar() {
         children={<ul className="modal-content">{itemsNavbar}</ul>}
         isOpen={isOpen}
         onClose={closeModal}></Modal>
-      <ul className="navbar">{itemsNavbar}</ul>
+      <ul className="navbar">
+        {itemsNavbar}
+        {signOut ? <SignOut /> : null}
+      </ul>
     </nav>
   )
 }
