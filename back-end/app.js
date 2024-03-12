@@ -6,6 +6,9 @@ const projectRoutes = require('./routes/project')
 const adminRoutes = require('./routes/admin')
 const editRoutes = require('./routes/edit')
 
+const basePath = "/api/"
+const version = 'v1'
+
 const app = express()
 
 app.use(express.json())
@@ -20,12 +23,15 @@ app.use((req, res, next) => {
     'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization'
   )
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200)
+  }
   next()
 })
 
-app.use('/api/admin', adminRoutes)
-app.use('/api/projects', projectRoutes)
-app.use('/api/admin/edit', editRoutes)
+app.use(`${basePath}+${version}/admin`, adminRoutes)
+app.use(`${basePath}+${version}/projects`, projectRoutes)
+app.use(`${basePath}+${version}/admin/edit`, editRoutes)
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
 module.exports = app

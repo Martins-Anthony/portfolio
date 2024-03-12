@@ -1,7 +1,18 @@
+import { useDispatch } from 'react-redux'
 import Field, { FIELD_TYPES } from '../../components/Field'
+import { signIn } from './signInSlice'
 function SignIn() {
+  const dispatch = useDispatch()
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const id = {
+      email: event.target.email.value,
+      password: event.target.password.value
+    }
+    dispatch(signIn(id))
+  }
   return (
-    <form onSubmit={''} className="form-container">
+    <form onSubmit={handleSubmit} className="form-container">
       <legend>Admin</legend>
       <div className="form-container_text">
         <Field
@@ -18,7 +29,7 @@ function SignIn() {
         />
       </div>
       <button type="submit" className="submit-style btn">
-        SignIn
+        Sign In
       </button>
     </form>
   )
