@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import signInReducer from '../../containers/Forms/Connection/SignIn/signInSlice'
-import addProjectReducer from '../../containers/Forms/Add/addSlice'
+import postProjectReducer from '../../containers/Forms/PostProject/postProjectSlice'
 
 const persistedState = sessionStorage.getItem('reduxState')
   ? JSON.parse(sessionStorage.getItem('reduxState'))
@@ -11,7 +11,7 @@ export const store = configureStore({
   preloadedState: persistedState,
   reducer: {
     signIn: signInReducer,
-    addProject: addProjectReducer
+    postProject: postProjectReducer
   }
 })
 

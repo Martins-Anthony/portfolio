@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { selectIsSignedIn } from '../../App/store/selectors'
-import Add from '../../containers/Forms/Add'
+import Add from '../../containers/Forms/PostProject'
 import SignIn from '../../containers/Forms/Connection/SignIn'
 
 function Admin() {

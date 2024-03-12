@@ -27,8 +27,8 @@ export const postProject = createAsyncThunk(
   }
 )
 
-const addProjectSlice = createSlice({
-  name: 'addProject',
+const postProjectSlice = createSlice({
+  name: 'postProject',
   initialState: {
     loading: false,
     error: null,
@@ -62,5 +62,5 @@ const addProjectSlice = createSlice({
   }
 })
 
-export const { resetError, handleEditMode, resetEditMode } = addProjectSlice.actions
-export default addProjectSlice.reducer
+export const { resetError, handleEditMode, resetEditMode } = postProjectSlice.actions
+export default postProjectSlice.reducer

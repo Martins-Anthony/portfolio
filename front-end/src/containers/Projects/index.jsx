@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import data from '../../data/projects'
 import Paging from '../../components/Paging'
+import { urlApi } from '../../utils/api/address'
 
 function Projects({ title }) {
   return (

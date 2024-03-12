@@ -1,5 +1,5 @@
 import Field, { FIELD_TYPES } from '../../../components/Field'
-import { postProject } from './addSlice'
+import { postProject } from './postProjectSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Add() {
