@@ -5,8 +5,9 @@ const path = require('path')
 const projectRoutes = require('./routes/project')
 const adminRoutes = require('./routes/admin')
 const editRoutes = require('./routes/edit')
+const emailRoutes = require('./routes/email')
 
-const basePath = "/api/"
+const basePath = '/api/'
 const version = 'v1'
 
 const app = express()
@@ -33,5 +34,6 @@ app.use(`${basePath}+${version}/admin`, adminRoutes)
 app.use(`${basePath}+${version}/projects`, projectRoutes)
 app.use(`${basePath}+${version}/admin/edit`, editRoutes)
 app.use('/images', express.static(path.join(__dirname, 'images')))
+app.use(basePath + version, emailRoutes)
 
 module.exports = app

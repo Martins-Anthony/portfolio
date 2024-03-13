@@ -1,9 +1,16 @@
 import Field, { FIELD_TYPES } from '../../../components/Field'
 import SocialMediaIcons from '../../../components/SocialMediaIcons'
 function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData()
+    formData.append('name', event.target.name.value)
+    formData.append('email', event.target.email.value)
+    formData.append('message', event.target.message.value)
+  }
   return (
     <section className="contact-container" id="contact">
-      <form onSubmit={''} className="form-container">
+      <form onSubmit={handleSubmit} className="form-container">
         <legend>Send me a message</legend>
         <div className="form-container_text">
           <Field
