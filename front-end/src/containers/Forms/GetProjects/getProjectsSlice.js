@@ -8,7 +8,6 @@ export const getProjects = createAsyncThunk('GetProjects', async (thunkAPI) => {
     })
 
     const data = await response.json()
-    console.log(data)
     if (data.error) {
       throw new Error(data.error)
     } else {

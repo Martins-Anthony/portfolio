@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Tags({ tags }) {
+function Tags({ tags, className }) {
   const itemsList = tags.map((item, index) => {
     return (
-      <div className="tags-style" key={item}>
+      <div className={`tags-style ${className}`} key={item}>
         {tags[index]}
       </div>
     )
