@@ -3,10 +3,13 @@ const fs = require('fs')
 
 exports.createProject = (req, res, next) => {
   const projectObject = req.body
+  const tagArray = JSON.parse(projectObject.tags)
   delete projectObject._id
   delete projectObject._userId
+  delete projectObject.tags
   const project = new Project({
     ...projectObject,
+    tags: tagArray,
     userId: req.auth.userId,
     image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
   })
@@ -48,8 +51,8 @@ exports.deleteProject = (req, res, next) => {
         const filename = project.imagesUrl.split('/images/')[1]
         fs.unlink(`./images/${filename}`, () => {
           Project.deleteOne({ _id: req.params.id })
-          .then(() => res.status(200).json({ message: 'Project deleted successfully' }))
-          .catch((error) => res.status(400).json({ error }))
+            .then(() => res.status(200).json({ message: 'Project deleted successfully' }))
+            .catch((error) => res.status(400).json({ error }))
         })
       }
     })

@@ -31,6 +31,18 @@
   .file-style {
     height: 3.87rem;
   }
+  .select-style {
+    option {
+      color: $black;
+      width: 200px;
+    }
+  }
+  .text-style {
+    width: 100%;
+  }
+  .label-style {
+    width: 100%;
+  }
 }
 
 @include tablet {

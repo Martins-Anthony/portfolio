@@ -8,11 +8,20 @@ function Add() {
     event.preventDefault()
     const formData = new FormData()
     formData.append('title', event.target.title.value)
-    formData.append('tags', event.target.tags.value)
     formData.append('description', event.target.description.value)
     formData.append('image', event.target.image.files[0])
     formData.append('linkGithub', event.target.linkGithub.value)
     formData.append('linkDemo', event.target.linkDemo.value)
+
+    const tags = event.target.tags.options
+    const selectedTags = []
+    for (let i = 0; i < tags.length; i++) {
+      if (tags[i].selected) {
+        selectedTags.push(tags[i].value)
+      }
+    }
+
+    formData.append('tags', JSON.stringify(selectedTags))
 
     dispatch(postProject(formData))
   }
@@ -26,7 +35,13 @@ function Add() {
           name="title"
           placeholder="Enter title"
         />
-        <Field type={FIELD_TYPES.INPUT_TEXT} label="Tags :" name="tags" placeholder="Enter tags" />
+        <Field
+          type={FIELD_TYPES.SELECT}
+          label="Tags :"
+          name="tags"
+          placeholder="Enter tags"
+          valueOption={'React;Redux Toolkit;HTML/CSS;Scss;JavaScript'}
+        />
       </div>
       <div className="form-container_text">
         <Field
