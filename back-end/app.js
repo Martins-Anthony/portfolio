@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
@@ -15,7 +16,7 @@ const app = express()
 app.use(express.json())
 
 mongoose.connect(
-  'mongodb+srv://webcraftAnthony67:wsuwUDbfySmx1m2a@clusterwebcraftanthony.hot0hr3.mongodb.net/?retryWrites=true&w=majority'
+  `mongodb+srv://${process.env.USER_DATABASE}:${process.env.DATABASE_KEY}@${process.env.CLUSTER_DATABASE}.hot0hr3.mongodb.net/?retryWrites=true&w=majority`
 )
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')

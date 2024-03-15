@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const emailCtrl = require('../controllers/email')
-const parser = require('../middleware/parser')
+const rateLimit = require('../middleware/rateLimit')
 
-router.post('/send-email', parser, emailCtrl.sendEmail)
+const multer = require('multer')
+const upload = multer({none: true})
+
+router.post('/send-email', rateLimit, upload.none(), emailCtrl.sendEmail)
 
 module.exports = router

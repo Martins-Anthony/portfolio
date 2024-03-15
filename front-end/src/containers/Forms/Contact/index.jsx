@@ -1,12 +1,17 @@
 import Field, { FIELD_TYPES } from '../../../components/Field'
 import SocialMediaIcons from '../../../components/SocialMediaIcons'
+import { useDispatch } from 'react-redux'
+import { sendMessage } from './contactSlice'
 function Contact() {
+  const dispatch = useDispatch()
   const handleSubmit = (event) => {
     event.preventDefault()
     const formData = new FormData()
     formData.append('name', event.target.name.value)
     formData.append('email', event.target.email.value)
     formData.append('message', event.target.message.value)
+    const headers = { 'Content-Type': `multipart/form-data; boundary=${formData._boundary}` }
+    dispatch(sendMessage({ formData, headers }))
   }
   return (
     <section className="contact-container" id="contact">
