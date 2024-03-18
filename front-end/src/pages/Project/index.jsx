@@ -13,7 +13,7 @@ function Project() {
   const project = projects.find((project) => project._id === id)
 
   if (!project) {
-    return <Navigate to="*" />
+    return <Navigate to="/" />
   }
 
   return (

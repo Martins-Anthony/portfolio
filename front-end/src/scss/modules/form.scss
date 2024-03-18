@@ -1,6 +1,7 @@
 .form-container {
   background: $lenear-blue;
   padding: 1.37rem;
+  padding-top: 3.12rem;
   border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -31,7 +32,7 @@
 
 @include desktop {
   .form-container {
-    max-width: 74rem;
+    max-width: 78rem;
     padding-left: 6.25rem;
     padding-right: 6.25rem;
     gap: 2rem;

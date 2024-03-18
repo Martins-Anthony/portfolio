@@ -7,6 +7,7 @@ import { logo } from '../../../src/data/logo.js'
 import Error from '../../pages/Error'
 import Admin from '../../pages/Admin'
 import Project from '../../pages/Project'
+import About from '../../pages/About'
 
 function AppRouter() {
   return (
@@ -15,6 +16,7 @@ function AppRouter() {
         <Header title={logo} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/projects/:id" element={<Project />} />
           <Route path="*" element={<Error />} />
