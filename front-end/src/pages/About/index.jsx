@@ -12,7 +12,6 @@ function About() {
           React & Redux, API calls, Visual Studio Code, responsive design, Git & GitHub, wireframing
           with Figma, SEO optimization, AGILE project management, and website debugging.
         </p>
-        <p>Feel free to contact me for any questions or projects.</p>
       </section>
       <Contact />
     </>

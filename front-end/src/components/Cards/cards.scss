@@ -32,11 +32,11 @@
 }
 
 #card-project {
-  height: 12rem;
+  height: 18.75rem;
   img,
   .background-filter {
     border-radius: 0.94rem;
-    height: 12rem;
+    height: 18.75rem;
   }
 }
 
@@ -69,10 +69,12 @@
     }
   }
   #card-project {
-    height: 25rem;
+    height: 37.5rem;
+    margin: 0 2.5rem;
     img,
     .background-filter {
-      height: 25rem;
+      height: 37.5rem;
+      
     }
   }
 }

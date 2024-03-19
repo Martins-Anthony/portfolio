@@ -5,6 +5,7 @@
   text-align: center;
   h1 {
     max-width: 16.44rem;
+    margin: 0;
   }
   h1, span {
     font-family: $font-family-title;
@@ -25,14 +26,18 @@
     }
     h1 {
       max-width: 31.75rem;
+      
     }
   }
 }
 
 @include desktop {
   .hero-container {
+    padding-top: 12.25rem;
+    padding-bottom: 0;
     h1 {
       max-width: 61.25rem;
+      height: calc(100vh - 12.75rem);
     }
     h1, span {
       font-size: 4.37rem;
