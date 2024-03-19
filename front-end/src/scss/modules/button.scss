@@ -11,19 +11,10 @@
   border-radius: 1.25rem;
   border: 0.12rem solid transparent;
 }
-.active {
-  background: $lenear-submit;
-  border: 0.12rem solid $bouton-color;
-  box-shadow: $bouton-shadow;
-}
 
 .btn:hover {
   background: $logo-color;
   border: 0.12rem solid $bouton-color;
-}
-.active:hover {
-  background: $lenear-submit;
-  cursor: default;
 }
 
 .submit-style {

@@ -1,7 +1,7 @@
 import menuBurger from '../../assets/icons/icon_menu_burger.svg'
 import Modal from '../Modal/index.jsx'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import React from 'react'
 import { scrollToSection } from '../../utils/scrollToSection'
 import { selectIsSignedIn } from '../../App/store/selectors'
@@ -9,10 +9,11 @@ import { useSelector } from 'react-redux'
 import SignOut from '../Forms/Connection/SignOut'
 function Navbar() {
   const signOut = useSelector(selectIsSignedIn)
+  const location = useLocation()
   const links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'Project', link: '/#projects' },
+    { name: 'Projects', link: '/#projects' },
     { name: 'Contact', link: '#contact' }
   ]
 
@@ -20,10 +21,19 @@ function Navbar() {
     if (isOpen === true) {
       closeModal()
     }
-    scrollToSection(sectionId)
+    setTimeout(() => {
+      scrollToSection(sectionId)
+    }, 100)
   }
 
   const itemsNavbar = links.map((link, index) => {
+    const isActive = location.pathname === link.link
+    if (link.name === 'Home' && isActive) {
+      return null
+    }
+    if (link.name === 'About' && isActive) {
+      return null
+    }
     return (
       <li key={index} className="navbar-container">
         <NavLink
@@ -31,7 +41,8 @@ function Navbar() {
           onClick={() => {
             handlerClick(link.name.toLowerCase())
           }}
-          className={'btn'}>
+          className={'btn'}
+          aria-current={link.name}>
           {link.name}
         </NavLink>
       </li>
