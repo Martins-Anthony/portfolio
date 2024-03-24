@@ -10,7 +10,7 @@ const persistedState = sessionStorage.getItem('reduxState')
   : {}
 
 export const store = configureStore({
-  devTools: true,
+  devTools: false,
   preloadedState: persistedState,
   reducer: {
     signIn: signInReducer,
