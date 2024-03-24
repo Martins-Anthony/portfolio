@@ -3,6 +3,10 @@
   @include center;
 }
 
+.menu-burger:hover {
+  cursor: pointer;
+}
+
 .navbar {
   display: none;
 }

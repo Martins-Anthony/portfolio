@@ -20,12 +20,17 @@ export const sendMessage = createAsyncThunk('sendMessage', async ({ formData }, 
 })
 
 const contactSlice = createSlice({
-  name: 'message',
+  name: 'email',
   initialState: {
     status: 'idle',
-    error: null
+    error: null,
+    message: null
   },
-  reducers: {},
+  reducers: {
+    resetMessage: (state) => {
+      state.message = null
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(sendMessage.pending, (state) => {
@@ -35,6 +40,7 @@ const contactSlice = createSlice({
       .addCase(sendMessage.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.error = null
+        state.message = action.payload
       })
       .addCase(sendMessage.rejected, (state, action) => {
         state.status = 'failed'
@@ -43,4 +49,5 @@ const contactSlice = createSlice({
   }
 })
 
+export const { resetMessage } = contactSlice.actions
 export default contactSlice.reducer

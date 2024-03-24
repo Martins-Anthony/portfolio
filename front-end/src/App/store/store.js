@@ -2,7 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import signInReducer from '../../containers/Forms/Connection/SignIn/signInSlice'
 import postProjectReducer from '../../containers/Forms/PostProject/postProjectSlice'
 import getProjectsReducer from '../../containers/Forms/GetProjects/getProjectsSlice'
-import contactSliceReducer from '../../containers/Forms/Contact/contactSlice'
+import contactReducer from '../../containers/Forms/Contact/contactSlice'
+import modalReducer from '../../containers/Modal/modalSlice'
 
 const persistedState = sessionStorage.getItem('reduxState')
   ? JSON.parse(sessionStorage.getItem('reduxState'))
@@ -15,10 +16,12 @@ export const store = configureStore({
     signIn: signInReducer,
     postProject: postProjectReducer,
     getProjects: getProjectsReducer,
-    message: contactSliceReducer
+    email: contactReducer,
+    modal: modalReducer
   }
 })
 
 store.subscribe(() => {
-  sessionStorage.setItem('reduxState', JSON.stringify(store.getState()))
+  const state = store.getState()
+  sessionStorage.setItem('reduxState', JSON.stringify({ getProjects: state.getProjects }))
 })

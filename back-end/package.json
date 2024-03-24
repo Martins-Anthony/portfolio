@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^5.5.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
@@ -20,5 +21,8 @@
     "mongoose-unique-validator": "^5.0.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

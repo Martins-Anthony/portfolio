@@ -2,7 +2,6 @@ import Tags from '../Tags'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import CardImage from './CardImage'
-import { scrollToSection } from '../../utils/scrollToSection'
 
 function Cards({ projects }) {
   const itemsList = projects.map((item) => {
