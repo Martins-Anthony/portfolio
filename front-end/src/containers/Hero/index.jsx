@@ -2,7 +2,8 @@ function Hero() {
   return (
     <section className="hero-container">
       <h1>
-        Hello, my name is <span>Anthony</span> a<br /> front-end developer,
+        Bonjour, je m'appelle <span>Anthony</span>
+        <br /> développeur front-end,
       </h1>
     </section>
   )

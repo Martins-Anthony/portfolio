@@ -24,7 +24,7 @@ function Project() {
   const handleBackToProjects = () => {
     setTimeout(() => {
       scrollToSection('projects')
-    }, 100)
+    }, 400)
   }
 
   return (
@@ -35,12 +35,12 @@ function Project() {
           <h1>{project.title}</h1>
           <Description items={project} />
           <div className="project-skills-container">
-            <h2 className="h2-project-skills-style">Skills acquired :</h2>
+            <h2 className="h2-project-skills-style">Skills :</h2>
             <Tags tags={project.tags} className={'tags-project-style'} />
             <SourceCode link={project} />
           </div>
           <Link to={'/#projects'} className="submit-style btn" onClick={handleBackToProjects}>
-            Projects
+            Projets
           </Link>
         </article>
       </section>

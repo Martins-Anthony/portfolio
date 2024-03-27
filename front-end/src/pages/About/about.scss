@@ -1,5 +1,6 @@
 .about-container {
   padding: 6.25rem 0 0 0;
+  height: 100vh;
   @include center;
   flex-direction: column;
   h1 {
@@ -39,11 +40,9 @@
 @include desktop {
   .about-container {
     padding-top: 0;
-    height: calc(70vh);
     h1 {
       font-size: 3.75rem;
       width: 100%;
-      
     }
     p, h1 {
       max-width: 65.25rem;

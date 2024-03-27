@@ -12,7 +12,7 @@ function Projects({ title }) {
     dispatch(getProjects())
   }
   return (
-    <section className="section projects-container" id="projects">
+    <section className="section projects-container" id="projets">
       <div className="projects-container-style">
         <h2>{title}</h2>
         {projects && <Paging data={projects} />}

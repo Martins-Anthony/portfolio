@@ -15,9 +15,9 @@ function Navbar() {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   const links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'Projects', link: '/#projects' },
+    // { name: 'Home', link: '/' },
+    { name: 'About', link: '/#about' },
+    { name: 'Projets', link: '/#projets' },
     { name: 'Contact', link: '#contact' }
   ]
 
@@ -41,6 +41,7 @@ function Navbar() {
   }
 
   const itemsNavbar = links.map((link, index) => {
+    /*
     const isActive = location.pathname === link.link
     if (link.name === 'Home' && isActive) {
       return null
@@ -48,6 +49,7 @@ function Navbar() {
     if (link.name === 'About' && isActive) {
       return null
     }
+    */
     return (
       <li key={index} className="navbar-container">
         <NavLink

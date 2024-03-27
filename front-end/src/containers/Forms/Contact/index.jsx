@@ -39,26 +39,26 @@ function Contact() {
   return (
     <section className="contact-container" id="contact">
       <form ref={form} onSubmit={handleSubmit} className="form-container">
-        <legend>Send me a message</legend>
+        <legend>Envoyez-moi un message</legend>
         <div className="form-container_text">
           <Field
             type={FIELD_TYPES.INPUT_TEXT}
-            label="Name :"
+            label="Nom :"
             name="name"
-            placeholder="Enter your name"
+            placeholder="Écrivez votre name"
           />
           <Field
             type={FIELD_TYPES.INPUT_TEXT}
             label="Email :"
             name="email"
-            placeholder="Enter your email"
+            placeholder="Écrivez votre email"
           />
         </div>
         <Field
           type={FIELD_TYPES.TEXTAREA}
           label="Message :"
           name="message"
-          placeholder="Enter your message"
+          placeholder="Écrivez votre message"
         />
         <ReCAPTCHA
           className="recaptcha-style"
@@ -66,7 +66,7 @@ function Contact() {
           size="invisible"
           ref={reCaptchaRef}
         />
-        <button className=" submit-style btn">Submit</button>
+        <button className=" submit-style btn">Envoyer</button>
       </form>
       {typeModal === 'emailConfirmation' ? (
         <Modal children={emailMessage} typeModal={'emailConfirmation'} />
