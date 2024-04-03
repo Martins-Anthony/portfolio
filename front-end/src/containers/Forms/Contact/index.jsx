@@ -61,7 +61,6 @@ function Contact() {
           placeholder="Écrivez votre message"
         />
         <ReCAPTCHA
-          className="recaptcha-style"
           sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
           size="invisible"
           ref={reCaptchaRef}

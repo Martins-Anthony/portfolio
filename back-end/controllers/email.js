@@ -21,7 +21,7 @@ const sendEmail = async (req, res) => {
       subject: 'subject site',
       text: `Nom: ${name}\nEmail: ${email}\n\nMessage: ${message}`
     }
-
+    
     await transporter.sendMail(mailOptions)
     res.status(200).json('E-mail envoyé !')
   } catch (error) {

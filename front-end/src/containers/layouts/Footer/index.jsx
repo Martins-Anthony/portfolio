@@ -7,7 +7,7 @@ function Footer() {
     <footer className="footer-container">
       <Logo name="footer" />
       <div className="copyright">
-        <span>© {date.getFullYear()}</span>
+        <span>© {date.getFullYear()} </span>
         <Logo />
         <p> All rights reserved</p>
       </div>

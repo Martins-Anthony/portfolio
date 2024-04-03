@@ -1,29 +1,26 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from '../../pages/Home'
 import Header from '../../containers/layouts/Header'
 import Footer from '../../containers/layouts/Footer'
-import { logo } from '../../../src/data/logo.js'
 import Error from '../../pages/Error'
 import Admin from '../../pages/Admin'
 import Project from '../../pages/Project'
-import About from '../../pages/About'
 
 function AppRouter() {
   return (
-    <Router>
-      <div className="main-container">
-        <Header title={logo} />
+    <HashRouter>
+      <main className="main-container">
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" exact element={<Home />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/projects/:id" element={<Project />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </div>
-      <Footer title={logo} />
-    </Router>
+      </main>
+      <Footer />
+    </HashRouter>
   )
 }
 

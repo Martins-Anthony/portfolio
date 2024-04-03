@@ -23,8 +23,8 @@ function Project() {
 
   const handleBackToProjects = () => {
     setTimeout(() => {
-      scrollToSection('projects')
-    }, 400)
+      scrollToSection('projets')
+    }, 100)
   }
 
   return (

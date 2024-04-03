@@ -4,10 +4,14 @@ function SourceCode({ link }) {
   return (
     <div className="container-link">
       <span>
-        <Link to={link.linkGithub}>Source Code On GitHub</Link>
+        <Link to={link.linkGithub} target="_blank" rel="noopener noreferrer">
+          Code source sur GitHub
+        </Link>
       </span>
       <span>
-        <Link to={link.linkDemo}>Online Demonstration</Link>
+        <Link to={link.linkDemo} target="_blank" rel="noopener noreferrer">
+          Voir le projet en ligne
+        </Link>
       </span>
     </div>
   )

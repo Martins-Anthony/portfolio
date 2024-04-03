@@ -4,10 +4,9 @@ import { urlApi } from '../../../utils/api/address'
 export const sendMessage = createAsyncThunk('sendMessage', async ({ formData }, thunkAPI) => {
   try {
     const response = await fetch(urlApi + '/send-email', {
-      method: 'POST',
+      method: 'post',
       body: formData
     })
-
     if (!response.ok) {
       const errorMessage = await response.text()
       throw new Error('Failed to send message', errorMessage)

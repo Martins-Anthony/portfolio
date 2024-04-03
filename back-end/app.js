@@ -26,13 +26,21 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(express.static(path.join(__dirname, '..', 'front-end', 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 mongoose
   .connect(
     `mongodb+srv://${process.env.USER_DATABASE}:${process.env.DATABASE_KEY}@${process.env.CLUSTER_DATABASE}.hot0hr3.mongodb.net/?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(err))
