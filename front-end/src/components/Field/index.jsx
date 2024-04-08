@@ -5,7 +5,8 @@ export const FIELD_TYPES = {
   TEXTAREA: 2,
   INPUT_PASSWORD: 3,
   INPUT_FILE: 4,
-  SELECT: 5
+  SELECT: 5,
+  INPUT_MAIL: 6
 }
 
 const Field = ({
@@ -14,7 +15,8 @@ const Field = ({
   name,
   placeholder,
   valueOption,
-  checked
+  checked,
+  onChange
 }) => {
   let component
   switch (type) {
@@ -23,8 +25,20 @@ const Field = ({
         <input type="text" name={name} placeholder={placeholder} required className="text-style" />
       )
       break
+    case FIELD_TYPES.INPUT_MAIL:
+      component = (
+        <input
+          type="email"
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
+          required
+          className="text-style"
+        />
+      )
+      break
     case FIELD_TYPES.TEXTAREA:
-      component = <textarea name={name} required className="textarea-style" />
+      component = <textarea name={name} onChange={onChange} required className="textarea-style" />
       break
     case FIELD_TYPES.INPUT_PASSWORD:
       component = <input type="password" name={name} placeholder={placeholder} required />

@@ -5,7 +5,7 @@ import SignIn from '../../containers/Forms/Connection/SignIn'
 
 function Admin() {
   const connection = useSelector(selectIsSignedIn)
-  return <section className="section">{!connection ? <SignIn /> : <Add />}</section>
+  return <section className="section large-height">{!connection ? <SignIn /> : <Add />}</section>
 }
 
 export default Admin

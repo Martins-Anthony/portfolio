@@ -5,11 +5,10 @@ import SocialMediaIcons from '../../../components/SocialMediaIcons'
 import { sendMessage } from './contactSlice'
 import { openModal } from '../../Modal/modalSlice'
 import { selectEmailMessage, selectModal } from '../../../App/store/selectors'
-import ReCAPTCHA from 'react-google-recaptcha'
 import Modal from '../../Modal'
+import ReCaptcha from '../../../components/ReCaptcha'
 
 function Contact() {
-  const reCaptchaRef = useRef()
   const form = useRef()
   const dispatch = useDispatch()
   const emailMessage = useSelector(selectEmailMessage)
@@ -17,7 +16,12 @@ function Contact() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const token = await reCaptchaRef.current.executeAsync()
+
+    window.grecaptcha.execute()
+
+    const token = await new Promise((resolve) => {
+      window.recaptchaCallback = resolve
+    })
 
     const formData = new FormData()
     formData.append('token', token)
@@ -26,7 +30,6 @@ function Contact() {
     formData.append('message', event.target.message.value)
     const headers = { 'Content-Type': `multipart/form-data; boundary=${formData._boundary}` }
     dispatch(sendMessage({ formData, headers }))
-    reCaptchaRef.current.reset()
     form.current.reset()
   }
 
@@ -48,7 +51,7 @@ function Contact() {
             placeholder="Écrivez votre name"
           />
           <Field
-            type={FIELD_TYPES.INPUT_TEXT}
+            type={FIELD_TYPES.INPUT_MAIL}
             label="Email :"
             name="email"
             placeholder="Écrivez votre email"
@@ -60,10 +63,10 @@ function Contact() {
           name="message"
           placeholder="Écrivez votre message"
         />
-        <ReCAPTCHA
-          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-          size="invisible"
-          ref={reCaptchaRef}
+        <ReCaptcha
+          onVerify={(token) => {
+            handleSubmit({ target: form.current })
+          }}
         />
         <button className=" submit-style btn">Envoyer</button>
       </form>

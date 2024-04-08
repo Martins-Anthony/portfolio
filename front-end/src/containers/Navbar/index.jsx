@@ -1,7 +1,7 @@
 import menuBurger from '../../assets/icons/icon_menu_burger.svg'
 import Modal from '../Modal/index.jsx'
 import React, { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { scrollToSection } from '../../utils/scrollToSection'
 import { selectIsSignedIn, selectModal } from '../../App/store/selectors'
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,11 +11,9 @@ function Navbar() {
   const signOut = useSelector(selectIsSignedIn)
   const modal = useSelector(selectModal)
   const dispatch = useDispatch()
-  const location = useLocation()
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   const links = [
-    // { name: 'Home', link: '/' },
     { name: 'About', link: '/#about' },
     { name: 'Projets', link: '/#projets' },
     { name: 'Contact', link: '#contact' }
@@ -25,15 +23,12 @@ function Navbar() {
     event.preventDefault()
     setIsOpenModal(!isOpenModal)
     dispatch(openModal('modalMenuBurger'))
-
-    // document.body.style.overflow = 'hidden'
   }
 
   const handlerClick = (sectionId) => {
     if (modal) {
       dispatch(closeModal())
       setIsOpenModal(false)
-      // document.body.style.overflow = 'auto'
     }
     setTimeout(() => {
       scrollToSection(sectionId)
@@ -41,15 +36,6 @@ function Navbar() {
   }
 
   const itemsNavbar = links.map((link, index) => {
-    /*
-    const isActive = location.pathname === link.link
-    if (link.name === 'Home' && isActive) {
-      return null
-    }
-    if (link.name === 'About' && isActive) {
-      return null
-    }
-    */
     return (
       <li key={index} className="navbar-container">
         <NavLink
@@ -67,7 +53,12 @@ function Navbar() {
 
   return (
     <nav>
-      <img src={menuBurger} alt={'Menu'} onClick={openMenuModal} className="menu-burger" />
+      <img
+        src={menuBurger}
+        alt={'Menu navigation'}
+        onClick={openMenuModal}
+        className="menu-burger"
+      />
       {isOpenModal ? (
         <Modal children={itemsNavbar} typeModal={'modalMenuBurger'} />
       ) : (
