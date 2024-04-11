@@ -1,11 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { frontEndTags, backEndTags, UX } from '../Tags/DataTags'
 
 function Tags({ tags, className }) {
-  const itemsList = tags.map((item, index) => {
+  const renderTagItem = (tagName) => {
+    let tagClass = ''
+    if (frontEndTags.includes(tagName)) {
+      tagClass = 'tag-front-end'
+    } else if (backEndTags.includes(tagName)) {
+      tagClass = 'tag-back-end'
+    } else if (UX.includes(tagName)) {
+      tagClass = 'tag-ux'
+    }
     return (
-      <div className={`tags-style ${className}`} key={item}>
-        {tags[index]}
+      <div className={tagClass} key={tagName}>
+        {tagName}
+      </div>
+    )
+  }
+  // {tags[index]}
+  const itemsList = tags.map((tagName, index) => {
+    return (
+      <div className={`tags-style ${className}`} key={index}>
+        {renderTagItem(tagName)}
       </div>
     )
   })

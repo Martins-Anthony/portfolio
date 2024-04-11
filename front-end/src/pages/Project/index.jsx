@@ -8,6 +8,7 @@ import Description from '../../components/Description'
 import Contact from '../../containers/Forms/Contact'
 import { useEffect } from 'react'
 import { scrollToSection } from '../../utils/scrollToSection'
+import Customer from '../../components/Customer'
 
 function Project() {
   useEffect(() => {
@@ -37,7 +38,10 @@ function Project() {
           <div className="project-skills-container">
             <h2 className="h2-project-skills-style">Skills :</h2>
             <Tags tags={project.tags} className={'tags-project-style'} />
-            <SourceCode link={project} />
+            <div className="container-source">
+              <SourceCode link={project} />
+              <Customer project={project} />
+            </div>
           </div>
           <Link to={'/#projects'} className="submit-style btn" onClick={handleBackToProjects}>
             Projets

@@ -5,6 +5,7 @@ import { putProject } from '../PutProject/putProjectSlice'
 import { useDispatch } from 'react-redux'
 import { openModal } from '../../Modal/modalSlice'
 import Modal from '../../Modal'
+import { itemsTags } from '../../../components/Tags/DataTags'
 
 function FormProject({ method, legend, dataProject }) {
   const dispatch = useDispatch()
@@ -36,19 +37,6 @@ function FormProject({ method, legend, dataProject }) {
       form.current.reset()
     })
   }
-
-  const itemsTags = [
-    { id: 1, name: 'React' },
-    { id: 2, name: 'Redux Toolkit' },
-    { id: 3, name: 'HTML / CSS' },
-    { id: 4, name: 'Scss' },
-    { id: 5, name: 'JavaScript' },
-    { id: 6, name: 'React Router' },
-    { id: 7, name: 'API express' },
-    { id: 8, name: 'MongoDB' },
-    { id: 9, name: 'Node.js' },
-    { id: 10, name: 'Figma' }
-  ]
 
   const handleCheckboxChange = (itemId) => {
     if (selectedItems.includes(itemId)) {
