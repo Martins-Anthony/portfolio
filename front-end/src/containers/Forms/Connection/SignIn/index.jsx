@@ -6,7 +6,7 @@ function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const id = {
-      email: event.target.email.value,
+      email: event.target.email.value.toLowerCase(),
       password: event.target.password.value
     }
     dispatch(signIn(id))
@@ -16,7 +16,7 @@ function SignIn() {
       <legend>Admin</legend>
       <div className="form-container_text">
         <Field
-          type={FIELD_TYPES.INPUT_TEXT}
+          type={FIELD_TYPES.INPUT_MAIL}
           label="Email :"
           name="email"
           placeholder="Enter email"

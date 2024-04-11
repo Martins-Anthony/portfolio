@@ -32,8 +32,15 @@ const projectSchema = mongoose.Schema({
   userId: {
     type: String,
     required: false
+  },
+  alt: {
+    type: String,
+    required: false
+  },
+  customer: {
+    type: String,
+    required: false
   }
 })
 
 module.exports = mongoose.model('Project', projectSchema)
-

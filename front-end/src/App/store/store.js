@@ -4,18 +4,20 @@ import postProjectReducer from '../../containers/Forms/PostProject/postProjectSl
 import getProjectsReducer from '../../containers/Forms/GetProjects/getProjectsSlice'
 import contactReducer from '../../containers/Forms/Contact/contactSlice'
 import modalReducer from '../../containers/Modal/modalSlice'
+import putProjectReducer from '../../containers/Forms/PutProject/putProjectSlice'
 
 const persistedState = sessionStorage.getItem('reduxState')
   ? JSON.parse(sessionStorage.getItem('reduxState'))
   : {}
 
 export const store = configureStore({
-  devTools: false,
+  devTools: true,
   preloadedState: persistedState,
   reducer: {
     signIn: signInReducer,
     postProject: postProjectReducer,
     getProjects: getProjectsReducer,
+    putProject: putProjectReducer,
     email: contactReducer,
     modal: modalReducer
   }

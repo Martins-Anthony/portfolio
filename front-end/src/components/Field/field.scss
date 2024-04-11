@@ -43,10 +43,57 @@
   .label-style {
     width: 100%;
   }
+  input[type="file"] {
+    height: 2.24rem;
+  }
 }
 
 @include tablet {
   .inputField {
     width: 100%;
   }
+}
+
+.lists-style {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.custom-checkbox {
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+
+  &:checked + .custom-checkbox::after {
+    opacity: 1;
+  }
+}
+.custom-label {
+  cursor: pointer;
+  &:hover {
+    color: #007bff;
+  }
+
+  &.selected {
+    font-weight: bold;
+    color: #007bff;
+  }
+}
+
+.container-bouton {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.button-edit--style {
+  margin: 0;
 }

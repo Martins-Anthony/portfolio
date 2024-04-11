@@ -8,6 +8,6 @@ const checkRoute = require('../middleware/checkRoute')
 const multer = require('multer')
 const upload = multer({none: true})
 
-router.post('/send-email', checkRoute, upload.none(), checkRoute, validateHuman, emailCtrl.sendEmail)
+router.post('/send-email',rateLimit, upload.none(), validateHuman, emailCtrl.sendEmail)
 
 module.exports = router

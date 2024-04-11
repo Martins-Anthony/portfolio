@@ -6,7 +6,8 @@ export const FIELD_TYPES = {
   INPUT_PASSWORD: 3,
   INPUT_FILE: 4,
   SELECT: 5,
-  INPUT_MAIL: 6
+  INPUT_MAIL: 6,
+  CHECKBOX: 7
 }
 
 const Field = ({
@@ -16,45 +17,124 @@ const Field = ({
   placeholder,
   valueOption,
   checked,
-  onChange
+  onChange,
+  defaultValue,
+  value,
+  editMode,
+  onButtonClick,
+  style
 }) => {
   let component
   switch (type) {
     case FIELD_TYPES.INPUT_TEXT:
-      component = (
-        <input type="text" name={name} placeholder={placeholder} required className="text-style" />
-      )
+      if (!editMode) {
+        component = (
+          <input
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            defaultValue={defaultValue}
+            onChange={onChange}
+            className="text-style"
+            required
+          />
+        )
+      } else {
+        component = (
+          <>
+            <input
+              type="text"
+              name={name}
+              placeholder={placeholder}
+              defaultValue={defaultValue}
+              className="text-style"
+              readOnly
+            />
+            <div className="container-bouton">
+              <button
+                type="button"
+                onClick={onButtonClick}
+                className="submit-style button-edit--style">
+                Modifier
+              </button>
+            </div>
+          </>
+        )
+      }
       break
     case FIELD_TYPES.INPUT_MAIL:
       component = (
         <input
           type="email"
           name={name}
-          placeholder={placeholder}
           onChange={onChange}
           required
+          placeholder={placeholder}
+          autoComplete="username"
           className="text-style"
         />
       )
       break
     case FIELD_TYPES.TEXTAREA:
-      component = <textarea name={name} onChange={onChange} required className="textarea-style" />
-      break
-    case FIELD_TYPES.INPUT_PASSWORD:
-      component = <input type="password" name={name} placeholder={placeholder} required />
-      break
-    case FIELD_TYPES.INPUT_FILE:
       component = (
-        <input
-          type="file"
+        <textarea
           name={name}
-          id={name}
-          placeholder={placeholder}
-          accept=".jpg, .jpeg, .png, .avif, .webp"
-          multiple
-          className="file-style"
+          onChange={onChange}
+          defaultValue={defaultValue}
+          required
+          className="textarea-style"
         />
       )
+      break
+    case FIELD_TYPES.INPUT_PASSWORD:
+      component = (
+        <input
+          type="password"
+          placeholder={placeholder}
+          name={name}
+          autoComplete="current-password"
+          required
+        />
+      )
+      break
+    case FIELD_TYPES.INPUT_FILE:
+      if (editMode) {
+        component = (
+          <>
+            <input
+              type="file"
+              name={name}
+              id={name}
+              placeholder={placeholder}
+              accept=".jpg, .jpeg, .png, .avif, .webp"
+              multiple
+              className="file-style"
+              onChange={onChange}
+            />
+            <div className="container-bouton">
+              <button
+                type="button"
+                onClick={onButtonClick}
+                className="submit-style button-edit--style">
+                Cancel
+              </button>
+            </div>
+          </>
+        )
+      } else {
+        component = (
+          <input
+            type="file"
+            name={name}
+            id={name}
+            placeholder={placeholder}
+            accept=".jpg, .jpeg, .png, .avif, .webp"
+            multiple
+            className="file-style"
+            onChange={onChange}
+          />
+        )
+      }
       break
     case FIELD_TYPES.SELECT:
       const options = valueOption.split(';')
@@ -71,15 +151,37 @@ const Field = ({
         </select>
       )
       break
+    case FIELD_TYPES.CHECKBOX:
+      component = (
+        <ul className="lists-style">
+          {valueOption.map((item) => (
+            <li key={item.id}>
+              <div className="custom-checkbox tags-style">
+                <input
+                  type="checkbox"
+                  id={item.id}
+                  onChange={() => onChange(item.name)}
+                  checked={value.includes(item.name)}
+                  defaultValue={item.name}
+                />
+                <label
+                  htmlFor={item.id}
+                  className={`custom-label ${value.includes(item.name) ? 'selected checked' : ''}`}>
+                  {item.name}
+                </label>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )
+      break
     default:
       component = <input type="text" name={name} placeholder={placeholder} required />
   }
   return (
     <div className="inputField">
-      <label className="label-style">
-        {label}
-        {component}
-      </label>
+      <label className="label-style">{label}</label>
+      {component}
     </div>
   )
 }
@@ -98,3 +200,4 @@ Field.defaultProps = {
 }
 
 export default Field
+// checked

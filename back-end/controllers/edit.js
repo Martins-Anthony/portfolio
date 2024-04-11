@@ -7,6 +7,7 @@ exports.createProject = (req, res, next) => {
   delete projectObject._id
   delete projectObject._userId
   delete projectObject.tags
+
   const project = new Project({
     ...projectObject,
     tags: tagArray,
@@ -21,25 +22,35 @@ exports.createProject = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }))
 }
 
-exports.modifyProject = (req, res, next) => {
-  const projectObject = req.file
-    ? {
+exports.modifyProject = async (req, res, next) => {
+
+  try {
+    let projectObject = {}
+    if (req.file) {
+      projectObject = {
         ...JSON.parse(req.body.project),
         image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
       }
-    : { ...req.body }
-  delete projectObject._id
-  Project.findOne({ _id: req.params.id })
-    .then((project) => {
-      if (project.userId != req.auth.userId) {
-        res.status(401).json({ error: 'Unauthorized' })
-      } else {
-        Project.updateOne({ _id: req.params.id }, { ...projectObject, _id: req.params.id })
-          .then(() => res.status(200).json({ message: 'Project updated successfully' }))
-          .catch((error) => res.status(400).json({ error }))
+    } else {
+      projectObject = {
+        ...req.body
       }
-    })
-    .catch((error) => res.status(400).json({ error }))
+    }
+    const tagArray = JSON.parse(projectObject.tags)
+    delete projectObject.tags
+    delete projectObject._id
+    projectObject.tags = tagArray
+
+    const project = await Project.findOne({ _id: req.params.id })
+    if (!project || project.userId != req.auth.userId) {
+      return res.status(401).json({ error: 'Unauthorized' })
+    }
+
+    await Project.updateOne({ _id: req.params.id }, { ...projectObject, _id: req.params.id })
+    res.status(200).json({ message: 'Project updated successfully' })
+  } catch (error) {
+    res.status(400).json({ error })
+  }
 }
 
 exports.deleteProject = (req, res, next) => {
