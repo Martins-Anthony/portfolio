@@ -5,8 +5,9 @@ function About() {
         <h2>À propos de moi</h2>
         <div>
           <p>
-            Je suis un développeur web spécialisé en front-end, ayant suivi une formation
-            certifiante chez OpenClassrooms.
+            Je suis un développeur web spécialisé en{' '}
+            <span className="tag-front-end">front-end</span>, ayant suivi une formation
+            d'intégrateur web certifiante chez OpenClassrooms.
           </p>
           <p>
             {' '}
@@ -18,8 +19,8 @@ function About() {
             la gestion de projet AGILE.
           </p>{' '}
           <p>
-            En parallèle, j'ai des notions <span className="tag-back-end">back-end</span> en ,
-            <span className="tag-back-end">Node.js</span>,{' '}
+            En parallèle, j'ai des notions <span className="tag-back-end">back-end</span> en
+            <span className="tag-back-end"> Node.js</span>,{' '}
             <span className="tag-back-end">Express</span> et{' '}
             <span className="tag-back-end">MongoDB</span> pour comprendre la communication
             client-serveur.

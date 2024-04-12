@@ -12,7 +12,8 @@ const projectSchema = mongoose.Schema({
       development: String,
       features: [String],
       why: String,
-      results: [String]
+      results: String,
+      objective: [String]
     },
     required: true
   },

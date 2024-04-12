@@ -22,6 +22,31 @@ function Description({ items }) {
       </ul>
       <h2>Pourquoi ?</h2>
       <p>{description.why}</p>
+      <h2>Objectif</h2>
+      <ul className="style-ul-description">
+        {description.objective.map((item, index) => {
+          const [description] = item.split(' : ')
+          return (
+            <li key={index}>
+              <p>{description}</p>
+            </li>
+          )
+        })}
+      </ul>
+      <h2>Résultat</h2>
+      {Array.isArray(description.results) ? (
+        <ul className="style-ul-description">
+          {description.results.map((item, index) => {
+            return (
+              <li key={index}>
+                <p>{item}</p>
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <p>{description.results}</p>
+      )}
     </div>
   )
 }

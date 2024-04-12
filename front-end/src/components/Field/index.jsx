@@ -23,7 +23,8 @@ const Field = ({
   editMode,
   onButtonClick,
   rowsTextarea,
-  requiredField
+  requiredField,
+  arialLabel
 }) => {
   let component
   switch (type) {
@@ -38,6 +39,7 @@ const Field = ({
             onChange={onChange}
             className="text-style"
             required
+            aria-label={arialLabel}
           />
         )
       } else {
@@ -73,6 +75,7 @@ const Field = ({
           placeholder={placeholder}
           autoComplete="username"
           className="text-style"
+          aria-label="Email"
         />
       )
       break
@@ -85,6 +88,7 @@ const Field = ({
           required={requiredField}
           className="textarea-style"
           rows={rowsTextarea}
+          aria-label="Message"
         />
       )
       break

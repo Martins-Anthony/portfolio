@@ -17,9 +17,7 @@ function DeleteProject() {
   const project = projects.find((project) => project._id === idProject)
 
   const handleEditMode = (id, title) => {
-    console.log(id)
     dispatch(openModal('modalConfirmation'))
-    console.log(title)
   }
 
   const handleCancel = (event) => {

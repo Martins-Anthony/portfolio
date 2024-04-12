@@ -49,6 +49,7 @@ function Contact() {
             label="Nom :"
             name="name"
             placeholder="Écrivez votre name"
+            arialLabel={'Nom Prénom'}
           />
           <Field
             type={FIELD_TYPES.INPUT_MAIL}
