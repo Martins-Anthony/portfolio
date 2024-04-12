@@ -7,7 +7,6 @@ import Modal from '../../Modal'
 import { openModal, closeModal } from '../../Modal/modalSlice'
 
 function DeleteProject() {
-  const [editMode, setEditMode] = useState(false)
   const [idProject, setIdProject] = useState('')
   const projects = useSelector(selectGetProjects)
   const dispatch = useDispatch()

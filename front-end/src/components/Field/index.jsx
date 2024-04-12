@@ -75,7 +75,7 @@ const Field = ({
           placeholder={placeholder}
           autoComplete="username"
           className="text-style"
-          aria-label="Email"
+          aria-label={arialLabel}
         />
       )
       break

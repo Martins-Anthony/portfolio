@@ -3,9 +3,6 @@ import DeleteProject from '../Forms/DeleteProject'
 import FormProject from '../Forms/FormProject'
 import PutProject from '../Forms/PutProject'
 
-const OptionDelete = () => {
-  return <p>Test Delete</p>
-}
 function Menu() {
   const [activeMenu, setActiveMenu] = useState('')
 

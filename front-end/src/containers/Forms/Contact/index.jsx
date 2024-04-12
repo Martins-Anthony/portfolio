@@ -56,6 +56,7 @@ function Contact() {
             label="Email :"
             name="email"
             placeholder="Écrivez votre email"
+            arialLabel={'Email'}
           />
         </div>
         <Field
