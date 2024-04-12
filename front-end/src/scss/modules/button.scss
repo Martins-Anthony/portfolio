@@ -38,3 +38,8 @@
     font-size: 0.87rem;
   }
 }
+
+.container-button {
+  @include center;
+  gap: 1.5rem;
+}

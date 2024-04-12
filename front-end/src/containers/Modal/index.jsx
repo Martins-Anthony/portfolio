@@ -45,7 +45,7 @@ const Modal = ({ children }) => {
     case 'modalMenuBurger':
       modalContent = <ul className="modal-menu-burger">{children}</ul>
       break
-    case 'emailConfirmation':
+    case 'modalConfirmation':
       modalContent = (
         <div ref={modalRef} className="modal-email-confirmation">
           <span className="close-modal" onClick={handleClose}>

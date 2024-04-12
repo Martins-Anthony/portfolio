@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DeleteProject from '../Forms/DeleteProject'
 import FormProject from '../Forms/FormProject'
 import PutProject from '../Forms/PutProject'
 
@@ -26,7 +27,7 @@ function Menu() {
 
       {activeMenu === 'menu1' && <FormProject legend="Add project" method="POST" />}
       {activeMenu === 'menu2' && <PutProject />}
-      {activeMenu === 'menu3' && <OptionDelete />}
+      {activeMenu === 'menu3' && <DeleteProject />}
     </div>
   )
 }

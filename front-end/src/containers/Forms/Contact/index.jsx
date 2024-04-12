@@ -35,7 +35,7 @@ function Contact() {
 
   useEffect(() => {
     if (emailMessage) {
-      dispatch(openModal('emailConfirmation'))
+      dispatch(openModal('modalConfirmation'))
     }
   }, [emailMessage, dispatch])
 
@@ -62,16 +62,18 @@ function Contact() {
           label="Message :"
           name="message"
           placeholder="Écrivez votre message"
+          rowsTextarea={10}
+          requiredField={true}
         />
         <ReCaptcha
           onVerify={(token) => {
             handleSubmit({ target: form.current })
           }}
         />
-        <button className=" submit-style btn">Envoyer</button>
+        <button className="submit-style btn">Envoyer</button>
       </form>
-      {typeModal === 'emailConfirmation' ? (
-        <Modal children={emailMessage} typeModal={'emailConfirmation'} />
+      {typeModal === 'modalConfirmation' ? (
+        <Modal children={emailMessage} typeModal={'modalConfirmation'} />
       ) : null}
       <SocialMediaIcons />
     </section>

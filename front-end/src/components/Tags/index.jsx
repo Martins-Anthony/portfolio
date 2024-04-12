@@ -18,7 +18,6 @@ function Tags({ tags, className }) {
       </div>
     )
   }
-  // {tags[index]}
   const itemsList = tags.map((tagName, index) => {
     return (
       <div className={`tags-style ${className}`} key={index}>

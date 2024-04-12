@@ -6,7 +6,14 @@ const projectSchema = mongoose.Schema({
     required: true
   },
   description: {
-    type: String,
+    type: {
+      intro: String,
+      modeling: String,
+      development: String,
+      features: [String],
+      why: String,
+      results: [String]
+    },
     required: true
   },
   image: {

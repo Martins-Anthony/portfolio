@@ -36,7 +36,7 @@ function Project() {
           <h1>{project.title}</h1>
           <Description items={project} />
           <div className="project-skills-container">
-            <h2 className="h2-project-skills-style">Skills :</h2>
+            <h3 className="h3-project-skills-style">Skills :</h3>
             <Tags tags={project.tags} className={'tags-project-style'} />
             <div className="container-source">
               <SourceCode link={project} />

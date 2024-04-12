@@ -14,11 +14,32 @@ function FormProject({ method, legend, dataProject }) {
   const [selectedImage, setSelectedImage] = useState(dataProject ? dataProject.image || [] : null)
   const [isEditingImage, setIsEditingImage] = useState(false)
 
+  const descriptionType = [
+    'intro',
+    'modeling',
+    'development',
+    'features',
+    'why',
+    'objective',
+    'results'
+  ]
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = new FormData()
     formData.append('title', event.target.title.value)
-    formData.append('description', event.target.description.value)
+    formData.append(
+      'description',
+      JSON.stringify({
+        intro: event.target.intro.value,
+        modeling: event.target.modeling.value,
+        development: event.target.development.value,
+        features: event.target.features.value.split('\n').filter(Boolean),
+        why: event.target.why.value,
+        objective: event.target.objective.value.split('\n').filter(Boolean),
+        results: event.target.results.value
+      })
+    )
     formData.append('image', selectedImage)
     formData.append('linkGithub', event.target.linkGithub.value)
     formData.append('linkDemo', event.target.linkDemo.value)
@@ -33,7 +54,7 @@ function FormProject({ method, legend, dataProject }) {
     }
 
     setTimeout(() => {
-      dispatch(openModal('emailConfirmation'))
+      dispatch(openModal('modalConfirmation'))
       form.current.reset()
     })
   }
@@ -147,13 +168,27 @@ function FormProject({ method, legend, dataProject }) {
           defaultValue={dataProject ? dataProject.alt : ''}
         />
       </div>
-      <Field
-        type={FIELD_TYPES.TEXTAREA}
-        label="Description :"
-        name="description"
-        placeholder="Enter description"
-        defaultValue={dataProject ? dataProject.description : ''}
-      />
+
+      {descriptionType.map((item, index) => {
+        let defaultValue = ' '
+        if (dataProject?.description) {
+          const description =
+            typeof dataProject.description === 'string' ? JSON.parse(dataProject.description) : ' '
+          defaultValue = description[item] || ' '
+        }
+        return (
+          <Field
+            key={index}
+            type={FIELD_TYPES.TEXTAREA}
+            label={`Description - ${item}`}
+            name={item}
+            placeholder="Enter description"
+            defaultValue={defaultValue}
+            rowsTextarea={3}
+            requiredField={false}
+          />
+        )
+      })}
       <button type="submit" className="submit-style btn">
         Submit
       </button>

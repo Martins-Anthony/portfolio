@@ -25,5 +25,8 @@ export const store = configureStore({
 
 store.subscribe(() => {
   const state = store.getState()
-  sessionStorage.setItem('reduxState', JSON.stringify({ getProjects: state.getProjects }))
+  sessionStorage.setItem(
+    'reduxState',
+    JSON.stringify({ getProjects: state.getProjects, signIn: state.signIn })
+  )
 })

@@ -30,3 +30,8 @@
     padding-top: 12.5rem;
   }
 }
+
+.container-bouton-slide {
+  @include center;
+  gap: 0.5rem;
+}

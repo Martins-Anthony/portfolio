@@ -25,7 +25,8 @@ function PutProject() {
       {editMode ? (
         <FormProject method="PUT" legend="Project modification" dataProject={project} />
       ) : (
-        <div className="projects-container-style">
+        <div className="form-container form-add">
+          <legend className="legend-project">Project modification</legend>
           {projects.map((project) => {
             return (
               <article key={project._id}>

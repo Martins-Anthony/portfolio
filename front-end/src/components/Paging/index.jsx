@@ -38,16 +38,25 @@ function Paging({ data }) {
         ))}
       </div>
       {totalPages > 1 ? (
-        <div>
-          <button onClick={handlePrevPage} disabled={currentPage === 1}>
+        <div className="container-bouton-slide">
+          <button
+            className={`btn submit-style ${currentPage === 1 ? 'disabled' : ''}`}
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}>
             Previous
           </button>
           {Array.from({ length: totalPages }, (_, index) => (
-            <button key={index + 1} onClick={() => handlePageChange(index + 1)}>
+            <button
+              className={`submit-style ${index + 1 === currentPage ? 'active' : ''}`}
+              key={index + 1}
+              onClick={() => handlePageChange(index + 1)}>
               {index + 1}
             </button>
           ))}
-          <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          <button
+            className="btn submit-style"
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}>
             Next
           </button>
         </div>

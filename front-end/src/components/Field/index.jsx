@@ -22,7 +22,8 @@ const Field = ({
   value,
   editMode,
   onButtonClick,
-  style
+  rowsTextarea,
+  requiredField
 }) => {
   let component
   switch (type) {
@@ -81,8 +82,9 @@ const Field = ({
           name={name}
           onChange={onChange}
           defaultValue={defaultValue}
-          required
+          required={requiredField}
           className="textarea-style"
+          rows={rowsTextarea}
         />
       )
       break
