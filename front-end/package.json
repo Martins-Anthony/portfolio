@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "cp -r build/* ../back-end/public/",
+    "postbuild": "if [ \"$VERCEL\" != \"1\" ]; then cp -r build/* ../back-end/public/; fi",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx",
