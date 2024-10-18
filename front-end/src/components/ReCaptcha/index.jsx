@@ -30,7 +30,8 @@ const ReCaptcha = ({ onVerify }) => {
       className="g-recaptcha"
       data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
       data-callback="recaptchaCallback"
-      data-size="invisible"></div>
+      data-size="invisible"
+      aria-label="recaptcha"></div>
   )
 }
 
